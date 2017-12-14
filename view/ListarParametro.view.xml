@@ -1,0 +1,53 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:u="sap.uxap" 
+    xmlns:c="sap.ui.core" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.ListarParametro">
+    <Page title="Lista de tecnologías"
+        showHeader="true"
+        enableScrolling="true">	
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Lista de tecnologías" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+        <l:VerticalLayout width="100%">
+        <Table id="tecnologia"
+        busyIndicatorDelay="{oModel2>/tableBusyDelay}"
+        growing="true"
+        inset="false"
+        growingScrollToLoad="true"
+        growingThreshold="5"
+        itemPress="onSelectionChange"
+        updateFinished="onUpdateFinished"
+        class="myEstilozebra"
+        items="{path:'/'}">
+          <items>
+            <ColumnListItem type="Navigation">
+              <cells>
+                <Text text="{id_tecnologia}"></Text>
+                <Text text="{nombre_tecnologia}"></Text>
+              </cells>
+            </ColumnListItem>
+          </items>
+          <columns>
+            <Column>
+              <Label text="Id Tecnologia"/>
+            </Column>
+            <Column>
+              <Label text="Tecnología"/>
+            </Column>
+          </columns>
+        </Table>
+      </l:VerticalLayout>	
+    </Page>
+</mvc:View>

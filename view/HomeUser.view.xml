@@ -1,0 +1,62 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core" 
+    xmlns:u="sap.uxap" 
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.HomeUser">
+    <Page title="Inicio" 
+        showHeader="true"
+        enableScrolling="true">
+
+        <customHeader>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Title text="Inicio" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+        <GenericTile 
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Excel"
+         subheader="" press="onPressExcel">
+            <tileContent>
+                <TileContent unit="Exportar e importar" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://excel-attachment"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+
+        <GenericTile
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Parametros RF"
+         subheader="" press="onPressParametroRf">
+            <tileContent>
+                <TileContent unit="Gestion de parametro RF" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://list"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+
+        <GenericTile
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Vecindades"
+         subheader="" press="onPressVecindades">
+            <tileContent>
+                <TileContent unit="Vecindades" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://addresses"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+
+    </Page>
+</mvc:View>

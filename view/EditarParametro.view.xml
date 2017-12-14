@@ -1,0 +1,105 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:u="sap.uxap" 
+    xmlns:c="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:layout="sap.ui.layout" 
+    controllerName="sap.ui.entelantenas.controller.EditarParametro">
+    <Page 
+        showHeader="true"
+        enableScrolling="true">
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Editar parámetro" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+        <f:Form id="form" editable="true">
+                <f:layout>
+                    <f:ResponsiveGridLayout
+                    labelSpanXL="3"
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="3"
+                    emptySpanL="3"
+                    class="sapUiContentPadding"
+                    emptySpanM="3"
+                    emptySpanS="5"
+                    columnsXL="1"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false"/>
+                </f:layout>
+
+                <f:formContainers>
+                    <f:FormContainer title="">
+                        <f:formElements>
+
+                            <f:FormElement label="Nombre del parametro" required="true">
+                                <f:fields>
+                                    <Input type="text" id="parametro" required="true"/>
+                                </f:fields>
+                            </f:FormElement>
+
+                            <f:FormElement label="Tipo de tecnologia" required="true" >
+                                <f:fields>
+                                    <Select id="selecttipotec" items="{tipotec>/tipotecitems}">
+                                        <c:Item key="{tipotec>id_tecnologia}" text="{tipotec>nombre_tecnologia}"/>
+                                    </Select>
+                                </f:fields>
+                            </f:FormElement>
+
+                            <f:FormElement label="Tipo de datos" required="true" >
+                                <f:fields>
+                                    <Select id="selecttipodato" items="{tipodato>/tipodatoitems}">
+                                        <c:Item key="{tipodato>id_tipodato}" text="{tipodato>nombre_tipodato}"/>
+                                    </Select>
+                                </f:fields>
+                            </f:FormElement>
+
+                            <f:FormElement label="Nombre Excel" required="true" >
+                                <f:fields>
+                                    <Input type="text" id="nexcel" required="true"/>
+                                </f:fields>
+                            </f:FormElement>
+
+                            <f:FormElement label="Nombre U2000" required="true" >
+                                <f:fields>
+                                    <Input type="text" id="nu2000" required="true"/>
+                                </f:fields>
+                            </f:FormElement>
+
+                            <!--<f:FormElement label="Estado" required="true" >
+                                <f:fields>
+                                    <Switch type="AcceptReject" id="SwitchEstado" state="true">
+                                        <layoutData>
+                                            <FlexItemData growFactor="1" />
+                                        </layoutData>
+                                    </Switch>
+                                </f:fields>
+                            </f:FormElement>-->
+
+                            <f:FormElement id="button" label="" required="true">
+                                <f:fields>
+                                    <Button type="Accept"
+                                            text="Aceptar"
+                                            press="onPressAcepts">
+                                    </Button>
+                                </f:fields>
+                            </f:FormElement>
+
+                        </f:formElements>
+                    </f:FormContainer>
+                </f:formContainers>
+            </f:Form>
+        
+    </Page>
+</mvc:View>

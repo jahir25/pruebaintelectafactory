@@ -1,0 +1,121 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:u="sap.uxap" 
+    xmlns:c="sap.ui.core" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    controllerName="sap.ui.entelantenas.controller.ListarSitio">
+    <html:style>
+        .bell-red{
+            background-color: #FF4222;
+        }
+        .bell-blue{
+            background-color: #6B31E8;
+            color: #fff;
+        }        
+    </html:style>
+    <Page
+        showHeader="true"
+        enableScrolling="true">		
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Lista de Sitios" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+		<l:VerticalLayout
+        width="100%">
+               <Table id="tblSitio"
+                       mode="None"
+                       selectionChange="onSelectionChange"
+                       updateFinished="onUpdateFinished"
+                       class="myEstilozebra"
+                       items="{path:'/'}">
+                   <headerToolbar>
+                        <Toolbar>
+                            <l:HorizontalLayout>
+                                    <Label class="sapUiSmallMarginTop sapUiTinyMarginEnd" text="Cantidad a mostrar:" />
+                                    <Select id="sShow" selectKey="5" change="onShow">
+                                        <c:ListItem key="5" text="5"/>
+                                        <c:ListItem key="10" text="10"/>
+                                        <c:ListItem key="25" text="25"/>
+                                        <c:ListItem key="50" text="50"/>
+                                        <c:ListItem key="100" text="100"/>
+                                    </Select>
+                                    <!--<Button 
+                                    tooltip="Filtros" 
+                                    icon="sap-icon://drop-down-list" 
+                                    press="onFiltros"
+                                    class="sapUiTinyMarginBegin"/>-->
+                                    <Button 
+                                    id="btnSiguiente"
+                                    icon="sap-icon://navigation-right-arrow" 
+                                    iconFirst="false"                                    
+                                    type="Transparent" 
+                                    text="Siguiente" 
+                                    press="goNext"/>
+                                    <Button 
+                                    id="btnAnterior"
+                                    icon="sap-icon://navigation-left-arrow" 
+                                    type="Transparent" 
+                                    text="Anterior" 
+                                    press="goPrevious"/>
+                            </l:HorizontalLayout>                                
+                            <!-- <Button
+                            icon="sap-icon://attachment-text-file"
+                            tooltip="Exportar a texto"
+                            text="Exportar a texto"
+                            press=""/> -->
+                        </Toolbar>
+                    </headerToolbar>
+                   <items>
+                       <ColumnListItem type="Active">
+                           <cells>
+                               <Text text="{codigo_sitio}"></Text>
+                               <Text text="{nombre_sitio}"></Text>
+                               <Text text="{latitud}"></Text>
+                               <Text text="{longitud}"></Text>
+                                <Switch type="AcceptReject" change="onDelete" state="{estado}">
+                                    <layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </layoutData>
+                                </Switch>
+                                <Button 
+                                press="onUpdate" 
+                                type="Transparent"
+                                icon="sap-icon://request" 
+                                class="sapUiTinyMarginEnd"/>
+                           </cells>
+                       </ColumnListItem>
+                   </items>
+                   <columns>
+                       <Column>
+                           <Label text="Codigo" />
+                       </Column>
+                       <Column>
+                           <Label text="Nombre" />
+                       </Column>
+                       <Column>
+                           <Label text="Latitud" />
+                       </Column>
+                       <Column>
+                           <Label text="Longitud" />
+                       </Column>
+                       <Column>
+                           <Label text="Estado" />
+                       </Column>
+                       <Column>
+                           <Label text="Acciones" />
+                       </Column>
+                   </columns>
+               </Table>
+       </l:VerticalLayout>
+    </Page>
+</mvc:View>

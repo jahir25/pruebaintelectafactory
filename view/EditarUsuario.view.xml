@@ -1,0 +1,114 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:c="sap.ui.core" 
+    xmlns:u="sap.uxap" 
+    xmlns:layout="sap.ui.layout" 
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.EditarUsuario">
+    <Page title="Editar Usuario"
+        showHeader="true"
+        enableScrolling="true">
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Editar Usuario" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+		<!-- <l:VerticalLayout>  -->
+
+			<f:Form id="form" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					class="sapUiContentPadding"
+					emptySpanM="3"
+					emptySpanS="5"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false"/>
+				</f:layout>
+
+				<f:formContainers>
+					<f:FormContainer title="">
+						<f:formElements>
+<!--
+							<f:FormElement label="ID" required="true">
+								<f:fields>
+									<Input type="text" enabled="false" visible="false" id="id_usuario" required="true"/>
+								</f:fields>
+							</f:FormElement>-->
+                            
+							<f:FormElement label="Login de usuario" required="true">
+								<f:fields>
+									<Input type="text" id="login" required="true"/>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement label="LDAP" required="true" >
+								<f:fields>
+									<Select id="selectLDAP" items="{/}" change="onChangeLDAP" >
+			                           	<c:Item key="{id_ldap}" text="{ldap}"/>
+			                       	</Select>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="elementnombre" label="Nombres de usuario" required="true">
+								<f:fields>
+									<Input type="text" id="nombre" required="true"/>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="elementapellido" label="Apellidos de usuario" required="true">
+								<f:fields>
+									<Input type="text" id="apellido" required="true"/>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="elementpass" label="Contraseña de usuario" required="true">
+								<f:fields>
+									<Input type="Password" id="pass" required="true"/>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement label="Perfil" required="true" >
+								<f:fields>
+									<Select id="selectPerfil" items="{/}">
+			                           	<c:Item key="{id_perfil}" text="{perfil}"/>
+			                       	</Select>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="elementemail" label="Email de usuario" required="true">
+								<f:fields>
+									<Input type="email" id="email" required="true"/>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="button" label="" required="true">
+								<f:fields>
+									<Button type="Accept"
+											text="Accept"
+											press="onPressSave">
+									</Button>
+								</f:fields>
+							</f:FormElement>
+
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		<!-- </l:VerticalLayout> -->
+    </Page>
+</mvc:View>

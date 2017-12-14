@@ -1,0 +1,66 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout" 
+    xmlns:core="sap.ui.core" 
+    xmlns:u="sap.ui.unified" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.ExportarImportar">
+    <Page title="Inicio" 
+        showHeader="true"
+        enableScrolling="true">
+
+        <customHeader>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Title text="Exportar e importar Parametros" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+		
+		
+		<FlexBox
+            height="100px"
+            alignItems="Start"
+            justifyContent="Center">
+            <items>
+                <l:VerticalLayout>
+                    <u:FileUploader
+                        id="fileUploader"
+                        name="myFileUpload"
+                        uploadUrl="upload/"
+                        width="600px"
+                        tooltip="Suba su archivo al servidor local"
+                        uploadComplete="handleUploadComplete"
+                        change="onChange"
+                        typeMissmatch="handleTypeMissmatch"
+                        style="Emphasized"
+                        fileType="xlsx,xls"
+                        placeholder="Elija un archivo para Cargar ...">
+                        <u:parameters>
+                            <u:FileUploaderParameter
+                                name="param1"
+                                value="Foo"/>
+                            <u:FileUploaderParameter
+                                name="param2"
+                                value="bar"/>
+                        </u:parameters>
+                        <u:headerParameters>
+                            <u:FileUploaderParameter
+                                name="headerParam1"
+                                value="Foo"/>
+                            <u:FileUploaderParameter
+                                name="headerParam2"
+                                value="bar"/>
+                        </u:headerParameters>
+                    </u:FileUploader>
+                    <Button
+                        text="Subir Archivo"
+                        press="handleUploadPress"/>
+                </l:VerticalLayout>
+            </items>
+        </FlexBox>
+
+    </Page>
+</mvc:View>

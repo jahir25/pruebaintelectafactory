@@ -1,0 +1,84 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:c="sap.ui.core" 
+    xmlns:u="sap.uxap" 
+    xmlns:layout="sap.ui.layout" 
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.EditarSector">
+    <Page
+        showHeader="true"
+        enableScrolling="true">
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Editar Sector" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+		<!-- <l:VerticalLayout>  -->
+
+			<f:Form id="form" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					class="sapUiContentPadding"
+					emptySpanM="3"
+					emptySpanS="5"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false"/>
+				</f:layout>
+
+				<f:formContainers>
+					<f:FormContainer title="">
+						<f:formElements>
+
+							<f:FormElement label="Codigo de sector" required="true">
+								<f:fields>
+									<Input type="text" id="sector" required="true" enabled="false"/>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement label="Sitio" required="true">
+								<f:fields>
+									<Select id="slcSitio" items="{/}">                                        
+			                           	<c:Item key="{codigo_sitio}" text="{codigo_sitio}"/>
+			                       	</Select>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement label="Tecnología" required="true">
+								<f:fields>
+									<Select id="slcTecnologia" items="{/}">			                           	
+			                           	<c:Item key="{id_tecnologia}" text="{nombre_tecnologia}"/>
+			                       	</Select>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="button" label="" required="true">
+								<f:fields>
+									<Button type="Accept"
+											text="Aceptar"
+											press="onPressSave">
+									</Button>
+								</f:fields>
+							</f:FormElement>
+
+						</f:formElements>
+					</f:FormContainer>				
+				</f:formContainers>
+			</f:Form>
+		<!-- </l:VerticalLayout> -->
+    </Page>
+</mvc:View>

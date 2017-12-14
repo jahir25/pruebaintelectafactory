@@ -1,0 +1,77 @@
+<core:FragmentDefinition
+	xmlns="sap.m"    
+    xmlns:l="sap.ui.layout"
+    xmlns:f="sap.ui.layout.form"
+	xmlns:core="sap.ui.core">
+    <Dialog id="dlgFiltros" title="Filtro de tabla" afterClose="oEscape">
+        <f:SimpleForm id="sfFiltro"
+                    editable="false"
+                    layout="ResponsiveGridLayout"
+                    title=""
+                    labelSpanXL="4"
+                    labelSpanL="4"
+                    labelSpanM="4"
+                    labelSpanS="12"
+                    adjustLabelSpan="true"
+                    emptySpanXL="3"
+                    emptySpanL="3"
+                    emptySpanM="3"
+                    emptySpanS="0"
+                    columnsXL="1"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false">
+            <f:content>
+                <Label text="Orden" />
+                    <l:VerticalLayout>
+                        <RadioButton id="A" select="onOrder" text="Ascendente" groupName="a"/>                
+                        <RadioButton id="D" select="onOrder" text="Descendente" groupName="a"/>                
+                    </l:VerticalLayout>
+                <Label text="Buscar" />
+                <Input id="Filtrar"/>
+            </f:content>
+         </f:SimpleForm>
+        <Table 
+        
+        id="tblColumns"        
+        itemPress="onRB"
+        
+        items="{path: '/'}">
+            <columns>
+                <Column
+                    width="5em">
+                    <Text text="Ordenar por" />
+                </Column>
+                <Column
+                    width="4em">
+                    <Text text="Buscar por" />
+                </Column>
+                <Column
+                    width="7em">
+                    <Text text="Columna" />
+                </Column>
+                <Column
+                    width="7em"
+                    id="sId">
+                    <Text text="sId" />
+                </Column>
+            </columns>
+            <items>
+                <ColumnListItem type="Active">
+                    <cells>
+                        <RadioButton groupName="b" select="onAction"/>
+                        <RadioButton groupName="c" select="onAction"/>
+                        <Text text="{column}"/>                    
+                        <Text text="{sId}"/>                    
+                    </cells>
+                </ColumnListItem>
+            </items>
+        </Table>        
+        <beginButton>
+            <Button text="Aceptar" press="goFiltro" type="Aceppt"/>
+        </beginButton>
+        <endButton>
+            <Button text="Cancelar" type="Reject" press="onClose"/>
+        </endButton>
+    </Dialog>	
+</core:FragmentDefinition>

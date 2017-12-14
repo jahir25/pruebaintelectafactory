@@ -1,0 +1,82 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:c="sap.ui.core" 
+    xmlns:u="sap.uxap" 
+    xmlns:layout="sap.ui.layout" 
+    xmlns="sap.m"
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.EditarPortadora">
+    <Page
+        showHeader="true"
+        enableScrolling="true">
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Editar Portadora" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+		<!-- <l:VerticalLayout>  -->
+
+			<f:Form id="form" editable="true">
+				<f:layout>
+					<f:ResponsiveGridLayout
+					labelSpanXL="3"
+					labelSpanL="3"
+					labelSpanM="3"
+					labelSpanS="12"
+					adjustLabelSpan="false"
+					emptySpanXL="3"
+					emptySpanL="3"
+					class="sapUiContentPadding"
+					emptySpanM="3"
+					emptySpanS="5"
+					columnsXL="1"
+					columnsL="1"
+					columnsM="1"
+					singleContainerFullSize="false"/>
+				</f:layout>
+
+				<f:formContainers>
+					<f:FormContainer title="">
+						<f:formElements>
+
+							<!--<f:FormElement label="Codigo de sitio" required="true">
+								<f:fields>
+									<Input type="text" id="codigo" required="true"/>
+								</f:fields>
+							</f:FormElement>-->
+
+							<f:FormElement label="Portadora" required="true">
+								<f:fields>
+									<Input id="txtPortadora"/>			                       	
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement label="Sector" required="true">
+								<f:fields>
+									<Select id="slcSector" items="{/}">
+			                           	<c:Item key="{codigo_sector}" text="{codigo_sector}"/>
+			                       	</Select>
+								</f:fields>
+							</f:FormElement>
+
+							<f:FormElement id="button" label="" required="true">
+								<f:fields>
+									<Button type="Accept"
+											text="Aceptar"
+											press="onPressSave">
+									</Button>
+								</f:fields>
+							</f:FormElement>
+
+						</f:formElements>
+					</f:FormContainer>
+				</f:formContainers>
+			</f:Form>
+		<!-- </l:VerticalLayout> -->
+    </Page>
+</mvc:View>

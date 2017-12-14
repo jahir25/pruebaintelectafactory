@@ -1,0 +1,79 @@
+<mvc:View 
+    xmlns="sap.m"    
+    xmlns:c="sap.ui.core" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.ParametroTecnologia">
+    <Page title="Lista de parámetros"
+        showHeader="true"
+        enableScrolling="true">	
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Lista de parámetros" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+        <l:VerticalLayout width="100%">
+        <Table id="parametros"        
+        itemPress="onSelectionChange"
+        updateFinished="onUpdateFinished"
+        class="myEstilozebra"
+        items="{path:'/'}">
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{id_parametro}"></Text>
+                <Text text="{nombre_tecnologia}"></Text>
+              	<Text text="{nombre_parametro}"></Text>
+              	<Text text="{nombre_tipodato}"></Text> 
+                <Text text="{nombre_excel}"></Text>
+                <Text text="{nombre_u2000}"></Text>             
+                <Switch type="AcceptReject" change="onDelete" state="{estado}">
+                    <layoutData>
+                        <FlexItemData growFactor="1" />
+                    </layoutData>
+                </Switch>
+                <Button 
+                press="onUpdate" 
+                type="Transparent" 
+                icon="sap-icon://request"
+                class="sapUiTinyMarginEnd"/>                
+              </cells>
+            </ColumnListItem>
+          </items>
+          <columns>
+            <Column >
+              <Label text="Id"/>
+            </Column>
+            <Column >
+              <Label text="Tipo de Tecnología"/>
+            </Column>
+            <Column >
+              <Label text="Nombre de Parámetro"/>
+            </Column>
+            <Column >
+              <Label text="Tipo de Dato"/>
+            </Column>
+            <Column >
+              <Label text="Nombre Excel"/>
+            </Column>
+            <Column >
+              <Label text="Nombre U2000"/>
+            </Column>
+            <Column >
+              <Label text="Estado"/>
+            </Column>
+            <Column >
+              <Label text="Acciones"/>
+            </Column>
+          </columns>
+        </Table>
+      </l:VerticalLayout>	
+    </Page>
+</mvc:View>

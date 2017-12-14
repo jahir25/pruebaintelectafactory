@@ -1,0 +1,123 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:u="sap.uxap" 
+    xmlns:c="sap.ui.core" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.AddParametroHoja">
+    <Page
+        showHeader="true"
+        enableScrolling="true">	
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Asignar parámetro a hoja datafill" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+        <ScrollContainer
+        horizontal="true"
+        vertical="true"
+        focusable="true">
+          <l:VerticalLayout width="50%">
+            <Table id="addParametro"
+            busyIndicatorDelay="{oModel2>/tableBusyDelay}"
+            growing="true"
+            inset="false"
+            mode="MultiSelect"
+            growingScrollToLoad="true"
+            itemPress="onSelectionChange"
+            updateFinished="onUpdateFinished"
+            class="myEstilozebra"
+            items="{path:'/'}">
+              <headerToolbar>
+                <Toolbar>
+                  <Title text="Parámetros (Lista de parámetros)" level="H2"/>
+                  <ToolbarSpacer/>
+                  <Button tooltip="View Settings" type="Accept" text="Asignar Parametro" icon="sap-icon://sys-add" press="OnAsignarParametro" />
+                </Toolbar>
+              </headerToolbar>
+              <items>
+                <ColumnListItem>
+                  <cells>
+                    <Text text="{id_parametro}"></Text>
+                    <Text text="{nombre_tecnologia}"></Text>
+                    <!-- <Text title="{nombre_parametro}"></Text> -->
+                    <ObjectIdentifier
+                    title="{nombre_parametro}"
+                    text=""/>
+                    <Text text="{nombre_tipodato}"></Text>
+                  </cells>
+                </ColumnListItem>
+              </items>
+              <columns>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                  <Label text="Id Tecnologia"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                  <Label text="Tecnologia"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                  <Label design="Bold" text="Parámetro"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                  <Label text="Tipo dato"/>
+                </Column>
+              </columns>
+            </Table>
+          </l:VerticalLayout>
+          <l:VerticalLayout width="50%">
+            <Table id="parametrosasignados"
+            busyIndicatorDelay="{oModel2>/tableBusyDelay}"
+            growing="true"
+            inset="false"
+            mode="MultiSelect"
+            growingScrollToLoad="true"
+            itemPress="onSelectionChange"
+            updateFinished="onUpdateFinished"
+            class="myEstilozebra"
+            items="{path:'/'}">
+              <headerToolbar>
+                <Toolbar>
+                  <Title text="Parámetros Asignados (Lista de parámetros asignados a la hoja)" level="H2"/>
+                  <ToolbarSpacer/>
+                  <Button tooltip="View Settings" type="Reject" text="Desaignar Parametro" icon="sap-icon://sys-cancel" press="OnDessignarParametro" />
+                </Toolbar>
+              </headerToolbar>
+              <items>
+                <ColumnListItem>
+                  <cells>
+                    <Text text="{id_parametro}"></Text>
+                    <Text text="{nombre_tecnologia}"></Text>
+                    <!-- <Text design="Bold" text="{nombre_parametro}"></Text> -->
+                    <ObjectIdentifier
+                    title="{nombre_parametro}"
+                    text=""/>
+                    <Text text="{nombre_tipodato}"></Text>
+                  </cells>
+                </ColumnListItem>
+              </items>
+              <columns>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                  <Label text="Id Tecnologia"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                  <Label text="Tecnologia"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                  <Label design="Bold" text="Parámetro"/>
+                </Column>
+                <Column minScreenWidth="Tablet" demandPopin="true">
+                  <Label text="Tipo dato"/>
+                </Column>
+              </columns>
+            </Table>
+          </l:VerticalLayout> 
+        </ScrollContainer>
+    </Page>
+</mvc:View>

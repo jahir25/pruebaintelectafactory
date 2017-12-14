@@ -1,0 +1,76 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:u="sap.uxap" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:c="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.Login">
+    <Page title=""
+        showNavButton="false" 
+        navButtonPress="onPressBack"
+        showHeader="true"
+        enableScrolling="true">
+        <FlexBox
+            height="100px"
+            alignItems="Start"
+            justifyContent="Center">
+            <items>
+                <l:VerticalLayout width="100%">
+                    <Image
+                        src="img/entel.png"
+                        class="sapUiSmallMarginTop sapUiSmallMarginBottom"
+                        width="21em"
+                    />
+                    <f:Form id="form" editable="true">
+                        <f:layout>
+                            <f:ResponsiveGridLayout
+                            labelSpanXL="3"
+                            labelSpanL="3"
+                            labelSpanM="3"
+                            labelSpanS="12"
+                            adjustLabelSpan="false"
+                            emptySpanXL="3"
+                            emptySpanL="3"
+                            class="sapUiContentPadding"
+                            emptySpanM="3"
+                            emptySpanS="5"
+                            columnsXL="1"
+                            columnsL="1"
+                            columnsM="1"
+                            singleContainerFullSize="false"/>
+                        </f:layout>
+                        <f:formContainers>
+                            <f:FormContainer title="">
+                                <f:formElements>
+
+                                    <f:FormElement label="Login de usuario" required="true">
+                                        <f:fields>
+                                            <Input type="text" id="login" submit="onPressLogin" required="true"/>
+                                        </f:fields>
+                                    </f:FormElement>
+
+                                    <f:FormElement label="Clave" required="true">
+                                        <f:fields>
+                                            <Input type="Password" id="pass" submit="onPressLogin" required="true"/>
+                                        </f:fields>
+                                    </f:FormElement>                                   
+
+                                    <f:FormElement id="button" label="" required="true">
+                                        <f:fields>
+                                            <Button type="Default"
+                                                    text="Ingresar"
+                                                    press="onPressLogin">
+                                            </Button>
+                                        </f:fields>
+                                    </f:FormElement>
+                                    
+                                </f:formElements>
+                            </f:FormContainer>
+                        </f:formContainers>
+                    </f:Form>
+                </l:VerticalLayout>
+            </items>
+        </FlexBox>
+    </Page>
+</mvc:View>

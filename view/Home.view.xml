@@ -1,0 +1,127 @@
+<mvc:View 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:core="sap.ui.core" 
+    xmlns:u="sap.uxap" 
+    xmlns="sap.m"
+    xmlns:l="sap.ui.layout" 
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.Home">
+    <Page title="Inicio" 
+        showHeader="true"
+        enableScrolling="true">
+
+        <customHeader>
+            <Toolbar>
+                <ToolbarSpacer/>
+                <Title text="Inicio" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+        <GenericTile 
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Usuarios"
+         subheader="" press="onUsuario">
+            <tileContent>
+                <TileContent unit="Gestion de usuarios" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://employee-lookup"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+
+        <GenericTile
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Parametros"
+         subheader="" press="onParametro">
+            <tileContent>
+                <TileContent unit="Gestion de parametros" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://list"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+
+        <GenericTile
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Tecnologia"
+         subheader="" press="onTecnologia">
+            <tileContent>
+                <TileContent unit="Gestion de Tecnologias" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://developer-settings"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+
+        <GenericTile
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Hojas Datafill"
+         subheader="" press="OnHojas">
+            <tileContent>
+                <TileContent unit="Gestion de las hojas" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://excel-attachment"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+        
+        <GenericTile
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Sitios"
+         subheader="" press="onPressSitio">
+            <tileContent>
+                <TileContent unit="Gestion de Sitios" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://offsite-work"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+
+        <GenericTile
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Sectores"
+         subheader="" press="onPressSector">
+            <tileContent>
+                <TileContent unit="Gestion de Sectores" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://example"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+        
+        <GenericTile
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Portadoras"
+         subheader="" press="onPressPortadora">
+            <tileContent>
+                <TileContent unit="Gestion de Portadoras" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://overview-chart"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>        
+        
+        <GenericTile
+         class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" 
+         header="Valores"
+         subheader="" press="onPressValores">
+            <tileContent>
+                <TileContent unit="Gestion de Valores" footer="">
+                    <content>
+                        <ImageContent src="sap-icon://fx"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+
+    </Page>
+</mvc:View>

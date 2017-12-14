@@ -1,0 +1,74 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:u="sap.uxap" 
+    xmlns:c="sap.ui.core" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.ListarHoja">
+    <Page
+        showHeader="true"
+        enableScrolling="true">	
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Lista de hojas datafill" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+        <l:VerticalLayout width="100%">
+        <Table id="hojaDatafill"        
+        itemPress="onSelectionChange"
+        updateFinished="onUpdateFinished"
+        class="myEstilozebra"
+        items="{path:'/'}">
+          <items>
+            <ColumnListItem>
+              <cells>
+                <Text text="{id_hoja}"></Text>
+                <Text text="{descripcion}"></Text>
+                <Text text="{nombre_excel}"></Text>
+                <Text text="{nombre_u2000}"></Text>
+                <Switch type="AcceptReject" change="onUpdateEstado" state="{ebool}">
+                    <layoutData>
+                        <FlexItemData growFactor="1" />
+                    </layoutData>
+                </Switch>
+                <l:HorizontalLayout>
+                  <Button 
+                  press="onGoEdit" 
+                  type="Transparent" 
+                  icon="sap-icon://request"
+                  class="sapUiTinyMarginEnd"/>
+                </l:HorizontalLayout>
+              </cells>
+            </ColumnListItem>
+          </items>
+          <columns>
+            <Column>
+              <Label text="Id Tecnologia"/>
+            </Column>
+            <Column>
+              <Label text="Descripción"/>
+            </Column>
+            <Column>
+              <Label text="Nombre Excel"/>
+            </Column>
+            <Column>
+              <Label text="Nombre U2000"/>
+            </Column>
+            <Column>
+              <Label text="Estado"/>
+            </Column>
+            <Column>
+              <Label text="Acción"/>
+            </Column>
+          </columns>
+        </Table>
+      </l:VerticalLayout>	
+    </Page>
+</mvc:View>

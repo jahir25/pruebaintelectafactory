@@ -1,0 +1,132 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:u="sap.uxap" 
+    xmlns:c="sap.ui.core" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:html="http://www.w3.org/1999/xhtml"
+    controllerName="sap.ui.entelantenas.controller.ListarUsuario">
+    <html:style>
+        .bell-red{
+            background-color: #FF4222;
+        }
+        .bell-blue{
+            background-color: #6B31E8;
+            color: #fff;
+        }        
+    </html:style>
+    <Page title="Lista de usuarios"
+        showHeader="true"
+        enableScrolling="true">		
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Lista de usuarios" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+		<l:VerticalLayout
+        width="100%">
+               <Table id="usuarios"
+                       mode="None"
+                       selectionChange="onSelectionChange"
+                       updateFinished="onUpdateFinished"
+                       items="{path:'/'}">
+                   <headerToolbar>
+                        <Toolbar>
+                            <l:HorizontalLayout>
+                                    <Label class="sapUiSmallMarginTop sapUiTinyMarginEnd" text="Cantidad a mostrar:" />
+                                    <Select id="sShow" selectKey="5" change="onShow">
+                                        <c:ListItem key="5" text="5"/>
+                                        <c:ListItem key="10" text="10"/>
+                                        <c:ListItem key="25" text="25"/>
+                                        <c:ListItem key="50" text="50"/>
+                                        <c:ListItem key="100" text="100"/>
+                                    </Select>
+                                    <!--<Button 
+                                    tooltip="Filtros" 
+                                    icon="sap-icon://drop-down-list" 
+                                    press="onFiltros"
+                                    class="sapUiTinyMarginBegin"/>-->
+                                    <Button 
+                                    id="btnSiguiente"
+                                    icon="sap-icon://navigation-right-arrow" 
+                                    iconFirst="false"                                    
+                                    type="Transparent" 
+                                    text="Siguiente" 
+                                    press="goNext"/>
+                                    <Button 
+                                    id="btnAnterior"
+                                    icon="sap-icon://navigation-left-arrow" 
+                                    type="Transparent" 
+                                    text="Anterior" 
+                                    press="goPrevious"/>
+                            </l:HorizontalLayout>                                
+                            <!-- <Button
+                            icon="sap-icon://attachment-text-file"
+                            tooltip="Exportar a texto"
+                            text="Exportar a texto"
+                            press=""/> -->
+                        </Toolbar>
+                    </headerToolbar>
+                   <items>
+                       <ColumnListItem type="Active">
+                           <cells>
+                               <Text text="{id_usuario}"></Text>
+                               <Text text="{login}"></Text>
+                               <Text text="{nombres}"></Text>
+                               <Text text="{apellidos}"></Text>
+                               <Text text="{ldap_val}"></Text>
+                               <Text text="{perfil}"></Text>
+                               <Text text="{email}"></Text>
+                                <Switch type="AcceptReject" change="onDelete" state="{estado}">
+                                    <layoutData>
+                                        <FlexItemData growFactor="1" />
+                                    </layoutData>
+                                </Switch>
+                                <Button 
+                                press="onUpdate" 
+                                type="Transparent"
+                                icon="sap-icon://request" 
+                                class="sapUiTinyMarginEnd"/>
+                           </cells>
+                       </ColumnListItem>
+                   </items>
+                   <columns>
+                       <Column>
+                           <Label text="Id Usuario" />
+                       </Column>
+                       <Column>
+                           <Label text="Login" />
+                       </Column>
+                       <Column>
+                           <Label text="Nombres" />
+                       </Column>
+                       <Column>
+                           <Label text="Apellidos" />
+                       </Column>
+                       <Column>
+                           <Label text="LDAP" />
+                       </Column>
+                       <Column>
+                           <Label text="Perfil" />
+                       </Column>
+                       <Column>
+                           <Label text="Email" />
+                       </Column>
+                       <Column>
+                           <Label text="Estado" />
+                       </Column>
+                       <Column>
+                           <Label text="Acciones" />
+                       </Column>
+                   </columns>
+               </Table>
+       </l:VerticalLayout>
+    </Page>
+</mvc:View>

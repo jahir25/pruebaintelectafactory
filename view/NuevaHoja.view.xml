@@ -1,0 +1,79 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:u="sap.uxap" 
+    xmlns:c="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    xmlns:layout="sap.ui.layout" 
+    controllerName="sap.ui.entelantenas.controller.NuevaHoja">
+    <Page
+        showHeader="true"
+        enableScrolling="true">
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Nueva hoja datafill" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+        <f:Form id="form" editable="true">
+                <f:layout>
+                    <f:ResponsiveGridLayout
+                    labelSpanXL="3"
+                    labelSpanL="3"
+                    labelSpanM="3"
+                    labelSpanS="12"
+                    adjustLabelSpan="false"
+                    emptySpanXL="3"
+                    emptySpanL="3"
+                    class="sapUiContentPadding"
+                    emptySpanM="3"
+                    emptySpanS="5"
+                    columnsXL="1"
+                    columnsL="1"
+                    columnsM="1"
+                    singleContainerFullSize="false"/>
+                </f:layout>
+
+                <f:formContainers>
+                    <f:FormContainer title="">
+                        <f:formElements>
+
+                            <f:FormElement label="Descripción" required="true">
+                                <f:fields>
+                                    <Input type="text" id="descripcion" required="true"/>
+                                </f:fields>
+                            </f:FormElement>
+
+                            <f:FormElement label="Nombre Excel" required="true" >
+                                <f:fields>
+                                    <Input type="text" id="nexcel" required="true"/>
+                                </f:fields>
+                            </f:FormElement>
+
+                            <f:FormElement label="Nombre U2000" required="true" >
+                                <f:fields>
+                                    <Input type="text" id="nu2000" required="true"/>
+                                </f:fields>
+                            </f:FormElement>
+
+                            <f:FormElement id="button" label="" required="true">
+                                <f:fields>
+                                    <Button type="Accept"
+                                            text="Aceptar"
+                                            press="onPressAcepts">
+                                    </Button>
+                                </f:fields>
+                            </f:FormElement>
+
+                        </f:formElements>
+                    </f:FormContainer>
+                </f:formContainers>
+            </f:Form>
+        
+    </Page>
+</mvc:View>

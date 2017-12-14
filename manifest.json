@@ -1,0 +1,487 @@
+{
+  "_version": "1.1.0",
+  "sap.app": {
+	"_version": "1.1.0",
+	"id": "sap.ui.entelantenas",
+	"type": "application",
+	"i18n": "i18n/i18n.properties",
+	"title": "PORTAL RRHH",
+	"description": "Portal RRHH",
+	"applicationVersion": {
+	  "version": "1.0.0"
+	}
+  },
+  "sap.ui": {
+	"_version": "1.1.0",
+	"technology": "UI5",
+	"deviceTypes": {
+	  "desktop": true,
+	  "tablet": true,
+	  "phone": true
+	},
+	"supportedThemes": [
+	  "sap_belize"
+	]
+  },
+  "sap.ui5": {
+	"_version": "1.1.0",
+	"rootView": "sap.ui.entelantenas.view.App",
+	"dependencies": {
+	  "minUI5Version": "1.30",
+	  "libs": {
+		"sap.m": {}
+	  }
+	},
+	"models": {
+	  "i18n": {
+		"type": "sap.ui.model.resource.ResourceModel",
+		"settings": {
+		  "bundleName": "sap.ui.entelantenas.i18n.i18n"
+		}
+	  }
+	},
+      "routing": {
+			"config": {
+				"routerClass": "sap.m.routing.Router",
+				"viewType": "XML",
+				"viewPath": "sap.ui.entelantenas.view",
+				"controlId": "app",
+				"controlAggregation": "pages",
+				"transition": "slide"
+			},
+			"routes": [{
+				"pattern": "",
+				"name": "login",
+				"target": "login"
+			},
+                       {
+				"pattern": "home",
+				"name": "home",
+				"target": "home"
+			},
+                       {
+				"pattern": "menuUsuario",
+				"name": "menuUsuario",
+				"target": "menuUsuario"
+			},
+                       {
+				"pattern": "nuevoUsuario",
+				"name": "nuevoUsuario",
+				"target": "nuevoUsuario"
+			},
+                       {
+				"pattern": "listarUsuario",
+				"name": "listarUsuario",
+				"target": "listarUsuario"
+			},
+                       {
+				"pattern": "menuParametro",
+				"name": "menuParametro",
+				"target": "menuParametro"
+			},
+                       {
+				"pattern": "listarParametro",
+				"name": "listarParametro",
+				"target": "listarParametro"
+			},
+                       {
+				"pattern": "nuevoParametro",
+				"name": "nuevoParametro",
+				"target": "nuevoParametro"
+			},
+                       {
+				"pattern": "editarUsuario/:id_usuario:",
+				"name": "editarUsuario",
+				"target": "editarUsuario"
+            },
+                       {
+				"pattern": "parametroTecnologia/:sPath:",
+				"name": "parametroTecnologia",
+				"target": "parametroTecnologia"
+			},
+                       {
+				"pattern": "menuSitio",
+				"name": "menuSitio",
+				"target": "menuSitio"          
+            },
+                       {
+				"pattern": "listarSitio",
+				"name": "listarSitio",
+				"target": "listarSitio"
+			},
+                       {
+				"pattern": "nuevoSitio",
+				"name": "nuevoSitio",
+				"target": "nuevoSitio"
+			},
+                       {
+				"pattern": "editarSitio/:codigo:",
+				"name": "editarSitio",
+				"target": "editarSitio"
+            },
+                       {
+				"pattern": "editarParametro/:id_parametro:/:id_tecnologia:",
+				"name": "editarParametro",
+				"target": "editarParametro"
+            },
+            			{
+				"pattern": "menuTecnologia",
+				"name": "menuTecnologia",
+				"target": "menuTecnologia"
+            },
+            			{
+				"pattern": "nuevoTecnologia",
+				"name": "nuevoTecnologia",
+				"target": "nuevoTecnologia"
+            },
+            			{
+				"pattern": "listarTecnologia",
+				"name": "listarTecnologia",
+				"target": "listarTecnologia"
+            },
+            			{
+				"pattern": "editarTecnologia/:id_tecnologia:",
+				"name": "editarTecnologia",
+				"target": "editarTecnologia"
+			},
+						{
+				"pattern": "menuSector",
+				"name": "menuSector",
+				"target": "menuSector"          
+            },
+                       {
+				"pattern": "listarSector",
+				"name": "listarSector",
+				"target": "listarSector"
+			},
+                       {
+				"pattern": "nuevoSector",
+				"name": "nuevoSector",
+				"target": "nuevoSector"
+			},
+                       {
+				"pattern": "editarSector/:codigo:",
+				"name": "editarSector",
+				"target": "editarSector"
+            },
+            			{
+				"pattern": "menuHoja",
+				"name": "menuHoja",
+				"target": "menuHoja"
+            },			
+            			{
+				"pattern": "nuevaHoja",
+				"name": "nuevaHoja",
+				"target": "nuevaHoja"
+            },			
+            			{
+				"pattern": "listarHoja",
+				"name": "listarHoja",
+				"target": "listarHoja"
+            },			
+            			{
+				"pattern": "asignarParametro",
+				"name": "asignarParametro",
+				"target": "asignarParametro"
+            },
+            			{
+				"pattern": "editarHoja/:id_hoja:",
+				"name": "editarHoja",
+				"target": "editarHoja"
+            },
+            			{
+				"pattern": "addParametroHoja/:id_hoja:",
+				"name": "addParametroHoja",
+				"target": "addParametroHoja"
+			},
+						{
+				"pattern": "menuPortadora",
+				"name": "menuPortadora",
+				"target": "menuPortadora"          
+            },
+                       {
+				"pattern": "listarPortadora",
+				"name": "listarPortadora",
+				"target": "listarPortadora"
+			},
+                       {
+				"pattern": "nuevaPortadora",
+				"name": "nuevaPortadora",
+				"target": "nuevaPortadora"
+			},
+                       {
+				"pattern": "editarPortadora/:id_portadora:",
+				"name": "editarPortadora",
+				"target": "editarPortadora"
+            },
+						{
+				"pattern": "menuValores",
+				"name": "menuValores",
+				"target": "menuValores"          
+            },
+                       {
+				"pattern": "listarValores",
+				"name": "listarValores",
+				"target": "listarValores"
+			},
+                       {
+				"pattern": "nuevoValores",
+				"name": "nuevoValores",
+				"target": "nuevoValores"
+			},
+                       {
+				"pattern": "editarValores/:id_valor:",
+				"name": "editarValores",
+				"target": "editarValores"
+            },
+            			{
+				"pattern": "homeUser",
+				"name": "homeUser",
+				"target": "homeUser"
+            },
+            			{
+				"pattern": "exportarImportar",
+				"name": "exportarImportar",
+				"target": "exportarImportar"
+            }
+
+                      ],
+			"targets": {
+				"login": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "Login",
+                    "viewId" : "viewLogin",
+                    "viewLevel" : 0
+				},
+                "home": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "Home",
+                    "viewId" : "viewHome",
+                    "viewLevel" : 1
+				},
+				"menuUsuario": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "MenuUsuario",
+                    "viewId" : "viewMenuUsuario",
+                    "viewLevel" : 2
+				},
+				"nuevoUsuario": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "NuevoUsuario",
+                    "viewId" : "viewNuevoUsuario",
+                    "viewLevel" : 3
+				},
+				"listarUsuario": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "ListarUsuario",
+                    "viewId" : "viewListarUsuario",
+                    "viewLevel" : 3
+				},
+				"menuParametro": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "MenuParametro",
+                    "viewId" : "viewMenuParametro",
+                    "viewLevel" : 2
+				},            
+				"listarParametro": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "ListarParametro",
+                    "viewId" : "viewListarParametro",
+                    "viewLevel" : 3
+				},
+				"nuevoParametro": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "NuevoParametro",
+                    "viewId" : "viewNuevoParametro",
+                    "viewLevel" : 3
+				},
+				"editarUsuario": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "EditarUsuario",
+                    "viewId" : "viewEditarUsuario",
+                    "viewLevel" : 4
+                },
+				"parametroTecnologia": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "ParametroTecnologia",
+                    "viewId" : "viewParametroTecnologia",
+                    "viewLevel" : 4
+				},
+				"menuSitio": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "MenuSitio",
+                    "viewId" : "viewMenuSitio",
+                    "viewLevel" : 2
+                },
+				"listarSitio": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "ListarSitio",
+                    "viewId" : "viewListarSitio",
+                    "viewLevel" : 3
+				},
+				"nuevoSitio": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "NuevoSitio",
+                    "viewId" : "viewNuevoSitio",
+                    "viewLevel" : 3
+				},
+				"editarSitio": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "EditarSitio",
+                    "viewId" : "viewEditarSitio",
+                    "viewLevel" : 4
+                },
+                "editarParametro": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "EditarParametro",
+                    "viewId" : "viewEditarParametro",
+                    "viewLevel" : 4
+                },
+                "menuTecnologia": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "MenuTecnologia",
+                    "viewId" : "viewMenuTecnologia",
+                    "viewLevel" : 2
+                },
+                "nuevoTecnologia": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "NuevoTecnologia",
+                    "viewId" : "viewNuevoTecnologia",
+                    "viewLevel" : 2
+                },
+                "listarTecnologia": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "ListarTecnologia",
+                    "viewId" : "viewListarTecnologia",
+                    "viewLevel" : 2
+                },
+                "editarTecnologia": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "EditarTecnologia",
+                    "viewId" : "viewEditarTecnologia",
+                    "viewLevel" : 3
+                },
+				"menuSector": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "MenuSector",
+                    "viewId" : "viewMenuSector",
+                    "viewLevel" : 2
+                },
+				"listarSector": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "ListarSector",
+                    "viewId" : "viewListarSector",
+                    "viewLevel" : 2
+				},
+				"nuevoSector": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "NuevoSector",
+                    "viewId" : "viewNuevoSector",
+                    "viewLevel" : 2
+				},
+				"editarSector": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "EditarSector",
+                    "viewId" : "viewEditarSector",
+                    "viewLevel" : 8
+                },
+                "menuHoja": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "MenuHoja",
+                    "viewId" : "viewMenuHoja",
+                    "viewLevel" : 4
+                },
+                "nuevaHoja": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "NuevaHoja",
+                    "viewId" : "viewNuevaHoja",
+                    "viewLevel" : 4
+                },
+                "listarHoja": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "ListarHoja",
+                    "viewId" : "viewListarHoja",
+                    "viewLevel" : 4
+                },
+                "asignarParametro": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "AsignarParametro",
+                    "viewId" : "viewAsignarParametro",
+                    "viewLevel" : 4
+                },
+                "editarHoja": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "EditarHoja",
+                    "viewId" : "viewEditarHoja",
+                    "viewLevel" : 5
+                },
+                "addParametroHoja": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "AddParametroHoja",
+                    "viewId" : "viewAddParametroHoja",
+                    "viewLevel" : 3
+                },
+				"menuPortadora": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "MenuPortadora",
+                    "viewId" : "viewMenuPortadora",
+                    "viewLevel" : 2
+                },
+				"listarPortadora": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "ListarPortadora",
+                    "viewId" : "viewListarPortadora",
+                    "viewLevel" : 2
+				},
+				"nuevaPortadora": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "NuevaPortadora",
+                    "viewId" : "viewNuevaPortadora",
+                    "viewLevel" : 2
+				},
+				"editarPortadora": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "EditarPortadora",
+                    "viewId" : "viewEditarPortadora",
+                    "viewLevel" : 3
+                },
+				"menuValores": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "MenuValores",
+                    "viewId" : "viewMenuValores",
+                    "viewLevel" : 2
+                },
+				"listarValores": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "ListarValores",
+                    "viewId" : "viewListarValores",
+                    "viewLevel" : 2
+				},
+				"nuevoValores": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "NuevoValores",
+                    "viewId" : "viewNuevoValores",
+                    "viewLevel" : 2
+				},
+				"editarValores": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "EditarValores",
+                    "viewId" : "viewEditarValores",
+                    "viewLevel" : 3
+                },
+                "homeUser": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "HomeUser",
+                    "viewId" : "viewHomeUser",
+                    "viewLevel" : 1
+                },
+                "exportarImportar": {
+                    "path": "sap.ui.entelantenas.view",
+					"viewName": "ExportarImportar",
+                    "viewId" : "viewExportarImportar",
+                    "viewLevel" : 1
+                }
+			}
+		}
+  }
+}

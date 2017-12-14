@@ -1,0 +1,46 @@
+<mvc:View 
+    xmlns="sap.m"
+    xmlns:u="sap.uxap" 
+    xmlns:l="sap.ui.layout" 
+    xmlns:core="sap.ui.core" 
+    xmlns:mvc="sap.ui.core.mvc" 
+    xmlns:f="sap.ui.layout.form" 
+    controllerName="sap.ui.entelantenas.controller.MenuSector">
+    <Page
+        showHeader="true"
+        enableScrolling="true">
+
+        <customHeader>
+            <Toolbar>
+                <Button type="Back" press="onPressBack" />
+                <ToolbarSpacer/>
+                <Title text="Gestión de Sector" level="H2"/>
+                <ToolbarSpacer/>
+                <Button icon="sap-icon://log" press="OnPressLogout" ariaLabelledBy="editButtonLabel"/>
+            </Toolbar>
+        </customHeader>
+
+        <GenericTile class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" header="Nuevo Sector"
+        subheader="" press="onPressNuevoSector">
+            <tileContent>
+                <TileContent unit="" footer="Ingresar">
+                    <content>
+                        <ImageContent src="sap-icon://sys-add"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+        
+        <GenericTile class="sapUiLargeMarginBegin sapUiLargeMarginTop tileLayout" header="Listar Sectores"
+        subheader="" press="onPressListarSector">
+            <tileContent>
+                <TileContent unit="" footer="Ingresar">
+                    <content>
+                        <ImageContent src="sap-icon://it-system"/>
+                    </content>
+                </TileContent>
+            </tileContent>
+        </GenericTile>
+
+    </Page>
+</mvc:View>
